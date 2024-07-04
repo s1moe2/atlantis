@@ -87,9 +87,11 @@ Webhooks must be created manually for repositories that trigger Atlantis.
 Passing the additional flag `--gh-app-slug` will modify the name of the App when posting comments on a Pull Request.
 :::
 
-#### Permissions
+#### Permissions & events
 
 GitHub App needs these permissions. These are automatically set when a GitHub app is created.
+
+When creating the app manually, these are the permissions to grant and events to subscribe on the app settings.
 
 ::: tip NOTE
 Since v0.19.7, a new permission for `Administration` has been added. If you have already created a GitHub app, updating Atlantis to v0.19.7 will not automatically add this permission, so you will need to set it manually.
@@ -97,6 +99,7 @@ Since v0.19.7, a new permission for `Administration` has been added. If you have
 Since v0.22.3, a new permission for `Members` has been added, which is required for features that apply permissions to an organizations team members rather than individual users. Like the `Administration` permission above, updating Atlantis will not automatically add this permission, so if you wish to use features that rely on checking team membership you will need to add this manually.
 :::
 
+**Permissions**
 | Type            | Access              |
 | --------------- | ------------------- |
 | Administration  | Read-only           |
@@ -108,6 +111,12 @@ Since v0.22.3, a new permission for `Members` has been added, which is required 
 | Pull requests   | Read and write      |
 | Webhooks        | Read and write      |
 | Members         | Read-only           |
+
+**Events**
+* Issue comment
+* Push
+* Pull request
+* Pull request review
 
 ### GitLab
 
